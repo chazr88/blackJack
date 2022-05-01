@@ -77,8 +77,13 @@ const Board = () => {
 
   const getMoney = () => {
     if(gameOver === false){
-      const money = localStorage.getItem('Money')
-      setTotalMoney(parseInt(money))
+      if(localStorage.getItem('Money') == NaN || localStorage.getItem('Money') == 0){
+        setTotalMoney(100)
+      }else{
+        const money = localStorage.getItem('Money')
+        setTotalMoney(parseInt(money))
+      }
+
     }
   }
 
