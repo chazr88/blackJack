@@ -173,13 +173,15 @@ const Board = () => {
   }
 
   const handleDealerTurn = () => {
-    setDealerTurn(true)
-    setPlayerTurn(false)
-    if(dealerTotal < 17) {
-      setDealerHand(dealerHand => [...dealerHand, dealCard()]);
-    } else {
-      setGameOver(true)
-      // return dealerTotal   
+    if(playerHand != ""){
+      setDealerTurn(true)
+      setPlayerTurn(false)
+      if(dealerTotal < 17) {
+        setDealerHand(dealerHand => [...dealerHand, dealCard()]);
+      } else {
+        setGameOver(true)
+        // return dealerTotal   
+      }
     }
   }
   
