@@ -241,10 +241,10 @@ const Board = () => {
     if(gameOver === true){
       if(endGameMessage == ""){
         if (playerTotal > dealerTotal){
-          setEndGameMessage("You Win")
+          setEndGameMessage(`You Win! Dealer has ${dealerTotal}`)
           addBet()
         } else if(playerTotal < dealerTotal) {
-          setEndGameMessage("Sorry You Lose")
+          setEndGameMessage(`Sorry You Lose. Dealer has ${dealerTotal}`)
           subtractBet()
         } else if(playerTotal === dealerTotal){
           setEndGameMessage("Draw You Win")
